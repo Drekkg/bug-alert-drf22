@@ -17,8 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('projects.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+     
 ]
+
+
+# Login: /api/auth/login/
+# Logout: /api/auth/logout/
+# Password Change: /api/auth/password/change/
+# Password Reset: /api/auth/password/reset/
+# Password Reset Confirm: /api/auth/password/reset/confirm/
+# User Registration: /api/auth/registration/
+# User Details: /api/auth/user/
