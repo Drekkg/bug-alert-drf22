@@ -101,12 +101,13 @@ MIDDLEWARE = [
 # else:
 #     CORS_ALLOWED_ORIGIN_REGEXES = [
 #         r"^https://.*\.gitpod\.io$",
-# ]
+# # ]
 # CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
+# ]
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'https://bug-alert-drf-7540ff833a9e.herokuapp.com']
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
