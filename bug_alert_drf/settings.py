@@ -72,7 +72,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
-    ]
+    ], 
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
 }
 
 REST_USE_JWT = True
