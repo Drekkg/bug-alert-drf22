@@ -11,5 +11,5 @@ class Project(models.Model):
 
 
     def __str__(self):
-        return f"{self.owner}'s projects"
+        return f"{self.owner.username}'s projects"
    
