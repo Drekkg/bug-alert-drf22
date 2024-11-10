@@ -5,5 +5,5 @@ from projects import views
 
 urlpatterns = [
     path('projects/', views.ProjectList.as_view()),
-    # path('register/', UserCreate.as_view(), name='user-create'),
+    
 ]

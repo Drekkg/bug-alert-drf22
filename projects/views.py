@@ -6,9 +6,6 @@ from .serializers import ProjectSerializer
 
 
 
-
-
-
 class ProjectList(APIView):
     def get(self, request):
         projects = Project.objects.all()
