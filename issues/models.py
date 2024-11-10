@@ -1,24 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .models import projects
+
 from django.db.models.signals import post_save
 
 
 PRIORITY_CHOICES = {
-    "low": "low",
-    "medium": "medium",
-    "high": "high",
-    "critical": "critical",
+    ("low", "low"),
+    ("medium", "medium"),
+    ("high", "high"),
+    ("critical", "critical"),
 }
 
 class Issue(models.Model):
     issue = models.CharField(max_length=200)
     console_error = models.TextField(max_length=300)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    repeatable = models.booleanField(default=False)
+    repeatable = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    priority = models.Charfield(max_length=10, choices=PRIORITY_CHOICES, default="low")
-    issue_project = models.ForeignKey(projects, on_delete=models.CASCADE)
+    priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default="low")
+    issue_project = models.ForeignKey('projects.Project', on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-created_on']
