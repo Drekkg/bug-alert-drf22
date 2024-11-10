@@ -13,8 +13,3 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.owner}'s projects"
    
-# This signal will create a project for every new user that is created 
-# post_save.connect(create_project, sender=User)  
-# def create_project(sender, instance, created, **kwargs):
-#     if created:
-#         Project.objects.create(owner=instance)
