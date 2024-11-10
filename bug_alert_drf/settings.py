@@ -105,9 +105,9 @@ MIDDLEWARE = [
 # CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:3000',
-#     'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
+#     'https://bug-alert-drf-7540ff833a9e.herokuapp.com', 'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
 # ]
-CORS_ORIGIN_WHITELIST = [ 'https://bug-alert-drf-7540ff833a9e.herokuapp.com', 'https://bug-alert-drf44-f700216422bd.herokuapp.com']
+CORS_ORIGIN_WHITELIST = [ 'https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000' ]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
