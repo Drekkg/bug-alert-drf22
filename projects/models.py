@@ -6,9 +6,9 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=200)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    projectURL = models.URLField(max_length=200, blank=True, null=True)
+    projectURL = models.URLField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
-
+ 
 
     def __str__(self):
         return f"{self.owner.username}'s projects"
