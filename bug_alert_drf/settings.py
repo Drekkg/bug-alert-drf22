@@ -38,7 +38,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost', 'bug-alert-drf.herokuapp.com', 
+    'localhost', 'bug-alert-drf-7540ff833a9e.herokuapp.com', 
 ]
 
 
