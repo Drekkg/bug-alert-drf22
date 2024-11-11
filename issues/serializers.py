@@ -14,5 +14,5 @@ class IssueSerializer(serializers.ModelSerializer):
             'repeatable', 
             'created_on', 
             'priority', 
-            'issue_project'
+            'issue_project',
         ]
