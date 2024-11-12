@@ -21,7 +21,7 @@ class Issue(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     priority = models.CharField(
         max_length=10, choices=PRIORITY_CHOICES, default="low")
-    issue_project = models.ForeignKey(
+    issue_project_id = models.ForeignKey(
         Project, on_delete=models.CASCADE, null=True)
 
     class Meta:
