@@ -26,6 +26,6 @@ class IssueList(APIView):
         data['issue_project_id'] = project_id  # Add project_id to the data
         serializer = IssueSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(owner=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
