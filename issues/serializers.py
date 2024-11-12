@@ -12,7 +12,7 @@ class IssueSerializer(serializers.ModelSerializer):
             'id',
             'issue',
             # 'console_error',
-            # 'owner',
+            'owner',
             # 'repeatable',
             # 'created_on',
             # 'priority',
