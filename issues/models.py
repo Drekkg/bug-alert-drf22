@@ -22,7 +22,7 @@ class Issue(models.Model):
     priority = models.CharField(
         max_length=10, choices=PRIORITY_CHOICES, default="low")
     issue_project = models.ForeignKey(
-        Project, on_delete=models.CASCADE)
+        Project, on_delete=models.CASCADE, null=True)
 
     class Meta:
         ordering = ['-created_on']
