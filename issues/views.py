@@ -7,13 +7,12 @@ from .serializers import IssueSerializer
 
 
 class IssueList(APIView):
-    def get(self, request, project_id):
+    def get(self, request,):
         issues = Issue.objects.filter(issue_project_id=project_id)
         serializer = IssueSerializer(issues, many=True)
         return Response(serializer.data)
-    
-    
-    def post(self, request, project_id):
+
+    def post(self, request,):
         serializer = IssueSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(owner=request.user, issueproject_id=project_id)
