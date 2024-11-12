@@ -38,7 +38,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost', 'bug-alert-drf-7540ff833a9e.herokuapp.com', 'bug-alert-drf44-f700216422bd.herokuapp.com', '127.0.0.1',
+    'localhost', 'bug-alert-drf-7540ff833a9e.herokuapp.com',
+    'bug-alert-drf44-f700216422bd.herokuapp.com', '127.0.0.1',
+    '8000-drekkg-bugalertdrf22-valsi0d7zos.ws.codeinstitute-ide.net',
 ]
 
 
@@ -73,7 +75,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
-    ], 
+    ],
     'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
 }
 
@@ -109,8 +111,8 @@ MIDDLEWARE = [
 #     'http://localhost:3000',
 #     'https://bug-alert-drf-7540ff833a9e.herokuapp.com', 'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
 # ]
-CORS_ORIGIN_WHITELIST = [ 'https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
-'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io' ]
+CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
+                         'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io']
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
@@ -158,7 +160,7 @@ else:
 # DATABASE_URL = os.getenv('DATABASE_URL')
 # DATABASES = {
 #     'default': dj_database_url.config(),
-# } 
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
