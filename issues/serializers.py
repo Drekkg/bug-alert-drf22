@@ -11,10 +11,11 @@ class IssueSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'issue',
-            # 'console_error',
             'owner',
-            # 'repeatable',
-            # 'created_on',
-            # 'priority',
-            # 'issue_project',
+            'console_error',
+            'repeatable',
+            'created_on',
+            'priority',
+            'issue_project'
+
         ]

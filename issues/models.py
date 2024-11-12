@@ -15,17 +15,17 @@ PRIORITY_CHOICES = {
 
 class Issue(models.Model):
     issue = models.CharField(max_length=200)
-    # console_error = models.TextField(max_length=300)
+    console_error = models.CharField(max_length=300)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    # repeatable = models.BooleanField(default=False)
-    # created_on = models.DateTimeField(auto_now_add=True)
-    # priority = models.CharField(
-    #     max_length=10, choices=PRIORITY_CHOICES, default="low")
-    # issue_project = models.ForeignKey(
-    #     Project, on_delete=models.CASCADE, null=True)
+    repeatable = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+    priority = models.CharField(
+        max_length=10, choices=PRIORITY_CHOICES, default="low")
+    issue_project = models.ForeignKey(
+        Project, on_delete=models.CASCADE, null=True)
 
-    # class Meta:
-    #     ordering = ['-created_on']
+    class Meta:
+        ordering = ['-created_on']
 
     def __str__(self):
         return f"{self.owner.username}'s issues"

@@ -113,7 +113,7 @@ MIDDLEWARE = [
 # ]
 CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
                          'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
-                         'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net']
+                         'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net', "https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net"]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
@@ -146,18 +146,18 @@ WSGI_APPLICATION = 'bug_alert_drf.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-if 'DEV' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
+# if 'DEV' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
 
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 # DATABASE_URL = os.getenv('DATABASE_URL')
 # DATABASES = {
 #     'default': dj_database_url.config(),
