@@ -112,7 +112,8 @@ MIDDLEWARE = [
 #     'https://bug-alert-drf-7540ff833a9e.herokuapp.com', 'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
 # ]
 CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
-                         'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io']
+                         'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
+                         'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net']
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
