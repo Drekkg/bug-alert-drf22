@@ -6,10 +6,10 @@ from django.db.models.signals import post_save
 
 
 PRIORITY_CHOICES = {
-    ("low", "low"),
-    ("medium", "medium"),
-    ("high", "high"),
-    ("critical", "critical"),
+    ("Low", "low"),
+    ("Medium", "medium"),
+    ("High", "high"),
+    ("Critical", "critical"),
 }
 
 
