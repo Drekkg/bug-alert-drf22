@@ -8,7 +8,7 @@ class Project(models.Model):
     description = models.TextField(max_length=200)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     projectURL = models.URLField(max_length=200, blank=True, null=True)
-    githubtURL = models.URLField(max_length=200, blank=True, null=True)
+    githubURL = models.URLField(max_length=200, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
