@@ -88,6 +88,10 @@ JWT_AUTH_SAMESITE = 'None'
 
 SECRET_KEY = ("sdfssdfmmbb000")
 
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'bug_alert_drf.serializers.CurrentUserSerializer'
+}
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
