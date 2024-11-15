@@ -13,7 +13,7 @@ class Comment(models.Model):
     resolved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment_id = models.ForeignKey(Issue, on_delete=models.CASCADE, null=True)
+    issue_id = models.ForeignKey(Issue, on_delete=models.CASCADE, null=True)
 
 
     class Meta:

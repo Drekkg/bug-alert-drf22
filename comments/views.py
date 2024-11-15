@@ -7,7 +7,7 @@ from .serializers import CommentSerializer
 
 
 class CommentList(APIView):
-    def get(self, request, issue_id):
+    def get(self, request,):
         # issues = Issue.objects.filter(issue_project_id=project_id)
         comments = Comment.objects.all()
         serializer = CommentSerializer(comments, many=True)
@@ -15,7 +15,7 @@ class CommentList(APIView):
 
     def post(self, request, project_id):
         data = request.data
-        data['comments_data'] = project_id  # Add project_id to the data
+        data['issue_id'] = project_id  # Add project_id to the data
         serializer = CommentSerializer(data=data)
         if serializer.is_valid():
             serializer.save(owner=request.user)
