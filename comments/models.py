@@ -15,10 +15,8 @@ class Comment(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     issue_id = models.ForeignKey(Issue, on_delete=models.CASCADE, null=True)
 
-
     class Meta:
         ordering = ['-created_on']
-
 
     def __str__(self):
         return f"{self.owner.username}'s comments"
