@@ -14,7 +14,7 @@ class CommentList(APIView):
 
     def post(self, request,):
         data = request.data
-        data['issue_id'] = project_id  # Add project_id to the data
+        # data['issue_id'] = project_id  # Add project_id to the data
         serializer = CommentSerializer(data=data)
         if serializer.is_valid():
             serializer.save(owner=request.user)
