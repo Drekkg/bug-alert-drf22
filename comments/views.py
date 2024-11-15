@@ -8,12 +8,11 @@ from .serializers import CommentSerializer
 
 class CommentList(APIView):
     def get(self, request,):
-        # issues = Issue.objects.filter(issue_project_id=project_id)
         comments = Comment.objects.all()
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
-    def post(self, request, project_id):
+    def post(self, request,):
         data = request.data
         data['issue_id'] = project_id  # Add project_id to the data
         serializer = CommentSerializer(data=data)
