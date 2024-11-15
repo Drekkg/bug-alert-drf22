@@ -14,7 +14,7 @@ class CommentSerializer(serializers.ModelSerializer):
             'resolved',
             'created_on',
             'owner',
-            'comment-id',
+            'comment_id',
         ]
 
         
