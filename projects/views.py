@@ -6,7 +6,7 @@ from .serializers import ProjectSerializer
 
 
 class ProjectList(APIView):
-    def get(self, request):
+    def get(self, request, pk):
         projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
         return Response(serializer.data)
