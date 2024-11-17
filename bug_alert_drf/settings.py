@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEV' in os.environ
+
 DEBUG = False
 
 ALLOWED_HOSTS = [
@@ -86,7 +86,7 @@ JWT_AUTH_SECURE = True
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
-SECRET_KEY = ("sdfssdfmmbb000")
+
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'bug_alert_drf.serializers.CurrentUserSerializer'
@@ -103,18 +103,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# if 'CLIENT_ORIGIN' in os.environ:
-#     CORS_ALLOWED_ORIGINS = [
-#         os.environ.get('CLIENT_ORIGIN')
-#     ]
-# else:
-#     CORS_ALLOWED_ORIGIN_REGEXES = [
-#         r"^https://.*\.gitpod\.io$",
-# # ]
-# CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
-#     'https://bug-alert-drf-7540ff833a9e.herokuapp.com', 'https://bug-alert-drf-7540ff833a9e.herokuapp.com',
+
 # ]
 CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
                          'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
