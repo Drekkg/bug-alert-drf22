@@ -11,8 +11,9 @@ class IssueList(APIView):
         serializer = IssueSerializer(issues, many=True)
         return Response(serializer.data)
 
-    def post(self, request,):
+    def post(self, request, project_id):
         data = request.data
+        data['issue_project_id'] = project_id
         serializer = IssueSerializer(data=data)
         if serializer.is_valid():
             serializer.save(owner=request.user)
