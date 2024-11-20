@@ -30,7 +30,7 @@ class Issue(models.Model):
     Methods:
         __str__(): Returns a string representation of the issue, showing the owner's username and the word 'issues'.
     """
-    
+
     issue = models.CharField(max_length=200)
     console_error = models.CharField(max_length=300)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)

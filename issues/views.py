@@ -6,7 +6,7 @@ from .serializers import IssueSerializer
 
 
 class IssueList(APIView):
-    def get(self, request, project_id):
+    def get(self, request, pk):
         issues = Issue.objects.all()
         serializer = IssueSerializer(issues, many=True)
         return Response(serializer.data)
