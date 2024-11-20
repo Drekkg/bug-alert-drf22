@@ -20,15 +20,10 @@ class IssueList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def put(self, request, project_id ):
-        try:
-            issue = Issue.objects.all()
-        except Issue.DoesNotExist:
-            return Response({'error': 'Issue not found'}, status=status.HTTP_404_NOT_FOUND)
+    def put(self, request, pk):
+        issue = Issue.objects.get(pk=pk)
+        serializer = IssueSerializer(issue, data=request.data)
 
-        data = request.data
-        data['issue_project_id'] = project_id
-        serializer = IssueSerializer(issue, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

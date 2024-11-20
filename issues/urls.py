@@ -5,5 +5,5 @@ from issues import views
 urlpatterns = [
     path('issues/project/<int:project_id>/',
          views.IssueList.as_view(), name='issue-list-by-project'),
-    path('issues/', views.IssueList.as_view()),
+    path('issues/<int:pk>', views.IssueList.as_view(), name='issue_list'),
 ]
