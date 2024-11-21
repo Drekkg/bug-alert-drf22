@@ -11,9 +11,9 @@ class IssueList(APIView):
         serializer = IssueSerializer(issues, many=True)
         return Response(serializer.data)
 
-    def post(self, request, pk):
+    def post(self, request, project_id):
         data = request.data
-        data['issue_project_id'] = pk
+        data['issue_project_id'] = project_id
         serializer = IssueSerializer(data=data)
         if serializer.is_valid():
             serializer.save(owner=request.user)
@@ -28,3 +28,30 @@ class IssueList(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class IssueDetail(APIView):
+    def get(self, request, pk):
+        try:
+            issue = Issue.objects.get(pk=pk)
+            serializer = IssueSerializer(issue)
+            return Response(serializer.data)
+        except Issue.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
+    def put(self, request, pk):
+        try:
+            issue = Issue.objects.get(pk=pk)
+            serializer = IssueSerializer(issue, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Issue.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    
+
+        
+
+        
