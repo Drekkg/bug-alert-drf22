@@ -6,7 +6,7 @@ from .serializers import IssueSerializer
 
 
 class IssueList(APIView):
-    def get(self, request):
+    def get(self, request, project_id):
         issues = Issue.objects.all()
         serializer = IssueSerializer(issues, many=True)
         return Response(serializer.data)
@@ -30,7 +30,6 @@ class IssueList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 class IssueDetail(APIView):
     def get(self, request, pk):
         try:
@@ -39,7 +38,7 @@ class IssueDetail(APIView):
             return Response(serializer.data)
         except Issue.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        
+
     def put(self, request, pk):
         try:
             issue = Issue.objects.get(pk=pk)
@@ -50,8 +49,3 @@ class IssueDetail(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Issue.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-    
-
-        
-
-        
