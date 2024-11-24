@@ -1,4 +1,4 @@
-# asgiref==3.3.4
+asgiref==3.8.1
 class-registry==2.1.2
 cloudinary==1.41.0
 cryptography==3.4.8
