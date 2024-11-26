@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost', 'bug-alert-drf-7540ff833a9e.herokuapp.com',
@@ -80,7 +80,6 @@ REST_FRAMEWORK = {
 #     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
 #         'rest_framework.renderers.JSONRenderer',
 #     ]
-
 
 
 REST_USE_JWT = True
