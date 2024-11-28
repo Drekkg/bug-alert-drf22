@@ -149,7 +149,7 @@ which is then filtered on the front end. This should be filterd on the back end 
 
 ## Python Validation
 
-###Projects
+### Projects
 
 **models.py**
 
