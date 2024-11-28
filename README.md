@@ -206,14 +206,113 @@ which is then filtered on the front end. This should be filterd on the back end 
 **settings.py**
 ![settings py](bug_alert_drf/assets/settings.png)
 
+Python files pass through the CI linter with no errors
+
 ## Deployment
 
 ### Deployment to Heroku
 
+**Prepare the API for deployment**
+
+- Step one you need to create a new Postgre Database.
+- Full instructions are available in The Code Institute LMS.
+- Log into Heroku and create a new App.
+- Click on the settings Tab.
+- Click on Reveal Config Vars
+- In the Key field enter: DATABASE_URL
+- In the value field paste in the url for your Database.
+- It should look something like this: postgres://ub6ycb3fdvr:....................
+- Back in the DRF app, in the terminal install the following packages:
+  pip3 install dj_database_url==0.5.0 psycopg2
+- In your settings.py file, import dj_database_url underneath the import for os:
+  import os
+  import dj_database_url
+
+- update the DataBASES section:
+
+if 'DEV' in os.environ:
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.sqlite3',
+'NAME': BASE_DIR / 'db.sqlite3',
+}
+}
+else:
+DATABASES = {
+'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+
+- Make sure to apply migrations to your database:
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+- install gunicorn.
+
+pip3 install gunicorn django-cors-headers
+
+- Freeze requirements
+
+pip freeze --local > requirements.txt
+
+- Create a procfile
+
+- Inside the procfile add:
+
+release: python manage.py makemigrations && python manage.py migrate
+web: gunicorn drf_api.wsgi
+
+- In settings.py update the Allowed hosts to include the heroku app:
+
+ALLOWED_HOSTS = ['localhost', '<your_app_name>.herokuapp.com']
+
+- Add corsheaders to INSTALLED_APPS
+  INSTALLED_APPS = [
+  ...
+  'dj_rest_auth.registration',
+  'corsheaders',
+  ...
+  ]
+
+- Add cors headers to the top of Middleware:
+
+SITE_ID = 1
+MIDDLEWARE = [
+'corsheaders.middleware.CorsMiddleware',
+...
+]
+
+- Enable sending cookies:
+
+CORS_ALLOW_CREDENTIALS = True
+
+- Set JWT Samesite to None:
+
+JWT_AUTH_SAMESITE = 'None'
+
+- Put your secret Key in the env py and access it from settings:
+  SECRET_KEY = os.getenv('SECRET_KEY')
+
+- Create a new secret key in env.py:
+  os.environ.setdefault("SECRET_KEY", "CreateANEWRandomValueHere")
+
+- Freeze requirements again:
+  pip freeze --local > requirements.txt
+
+- Back in Heroku, set a secret key:
+  SECRET_KEY: "create a random string"
+
+- Open the deploy tab and deploy!!
+
 ### Acknowledgements
 
-- [Any acknowledgements or thanks]
+- The Bug Alert DRF is based off the DRF walkthrough, and was adapted
+  for its current use.
 
 ## Acknowledgements
 
-- [Thank anyone who helped or inspired you in the creation of this project.]
+- Thanks to my Mentor Juliia Konovalova
+- My Partner Christine Steinbach
+- Google
+- Stack Overflow
+- Django documentation
