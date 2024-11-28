@@ -76,11 +76,6 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
 }
 
-# if 'DEV'not in os.environ:
-#     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
-#         'rest_framework.renderers.JSONRenderer',
-#     ]
-
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
@@ -105,7 +100,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# ]
 CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
                          'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
                          'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net', "https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net"]
@@ -133,12 +127,6 @@ WSGI_APPLICATION = 'bug_alert_drf.wsgi.application'
 
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 if 'DEV' in os.environ:
     DATABASES = {
         'default': {
