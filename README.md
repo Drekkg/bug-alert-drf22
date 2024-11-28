@@ -66,97 +66,80 @@ The project "Test Test Test" is deleted and as expected the related comments and
 
 ![delet comment](bug_alert_drf/assets/delete_comment.png)
 
+## Database
+
+The DB is is postgres and consists of three apps and models.
+
+**User**
+
+Created automatically by Django Restframework
+
+**Projects**
+Contains the following fields:
+
+id (PK)
+
+name
+
+description
+
+owner_id (FK to User)
+
+created_at
+
+updated_at
+
+**Issues**
+Contains the following fields:
+
+id (PK)
+
+title
+
+description
+
+project_id (FK to Project)
+
+owner_id (FK to User)
+
+created_at
+
+updated_at
+
+resolved
+
+**Comments**
+id (PK)
+
+text
+
+issue_id (FK to Issue)
+
+owner_id (FK to User)
+
+created_at
+
+updated_at
+
+**Entity Relationship diagram**
+
+![erd_diagram](bug_alert_drf/assets/entity_diagram.png)
+
+All models contain an appropriate serializer to convert the querysets into JSON and vice versa.
+All models have appropriate views and URL patterns to direct the data to the correct table.
+
+## Issue and Bugs
+
+The database works without any major errors.
+The design of the models though functional could be improved.
+A get request to the issues and comments will retrieve all comments and issues
+which is then filtered on the front end. This should be filterd on the back end and is slated as feature to be added in a future release.
+
+## Python Validation
+
 ## Deployment
 
-### Local Deployment
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   ```
-
-2. Create and activate a virtual environment:
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-3. Install the required packages:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Set up the environment variables:
-   Create a `.env` file in the root directory and add the following:
-
-   ```env
-   SECRET_KEY=your-secret-key
-   DATABASE_URL=your-database-url
-   ```
-
-5. Apply migrations:
-
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
-
-6. Create a superuser:
-
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-7. Run the development server:
-   ```bash
-   python manage.py runserver
-   ```
-
 ### Deployment to Heroku
-
-1. Create a new Heroku app:
-
-   ```bash
-   heroku create your-app-name
-   ```
-
-2. Set up environment variables on Heroku:
-
-   ```bash
-   heroku config:set SECRET_KEY=your-secret-key
-   heroku config:set DATABASE_URL=your-database-url
-   ```
-
-3. Push the code to Heroku:
-
-   ```bash
-   git push heroku main
-   ```
-
-4. Apply migrations on Heroku:
-
-   ```bash
-   heroku run python manage.py migrate
-   ```
-
-5. Create a superuser on Heroku:
-   ```bash
-   heroku run python manage.py createsuperuser
-   ```
-
-## Credits
-
-### Content
-
-- [Source of content, if applicable]
-
-### Media
-
-- [Source of images, videos, or other media]
 
 ### Acknowledgements
 
