@@ -1,10 +1,22 @@
 # Bug Alert Django Rest Framework Back End
 
-## DRF Overview
+## Overview
 
 Bug Alert DRF is the back end for the Bug Alert React Application.
 It serves as a model of the database to store the information regarding
 projects that wish to be tracked, issues, bugs and console errors that have observed. Bug Alert DRF conssits of three apps and models that store, update, retrieve and delete all neccassary information.
+
+**Live Site**
+
+https://bug-alert-drf-7540ff833a9e.herokuapp.com/
+
+**Repository**
+
+https://github.com/Drekkg/bug-alert-drf22.git
+
+**Author**
+
+Derek Garnett
 
 ## User Experience (UX)
 
@@ -68,7 +80,7 @@ The project "Test Test Test" is deleted and as expected the related comments and
 
 ## Database
 
-The DB is is postgres and consists of three apps and models.
+The DB is is a postgres relational database and consists of three apps and models.
 
 **User**
 
@@ -136,6 +148,24 @@ A get request to the issues and comments will retrieve all comments and issues
 which is then filtered on the front end. This should be filterd on the back end and is slated as feature to be added in a future release.
 
 ## Python Validation
+
+###Projects
+
+**models.py**
+
+![models](bug_alert_drf/assets/project_models.png)
+
+**serializers.py**
+
+![serializer](bug_alert_drf/assets/project_serializer.png)
+
+**urls.py**
+
+![urls](bug_alert_drf/assets/urls_projects.png)
+
+**views.py**
+
+![views](bug_alert_drf/assets/views_project.png)
 
 ## Deployment
 
