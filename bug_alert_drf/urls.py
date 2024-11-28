@@ -27,20 +27,12 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('accounts/', include('allauth.urls')),
-    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('dj-rest-auth/registration/',
+         include('dj_rest_auth.registration.urls')),
     path('', include('projects.urls')),
     path('', include('issues.urls')),
     path('', include('comments.urls')),
-
-
-
 ]
 
 
-# Login: /api/auth/login/
-# Logout: /api/auth/logout/
-# Password Change: /api/auth/password/change/
-# Password Reset: /api/auth/password/reset/
-# Password Reset Confirm: /api/auth/password/reset/confirm/
-# User Registration: /api/auth/registration/
-# User Details: /api/auth/user/
+

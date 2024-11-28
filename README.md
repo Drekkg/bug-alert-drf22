@@ -203,6 +203,9 @@ which is then filtered on the front end. This should be filterd on the back end 
 
 ![comments views](bug_alert_drf/assets/comments_views.png)
 
+**settings.py**
+![settings py](bug_alert_drf/assets/settings.png)
+
 ## Deployment
 
 ### Deployment to Heroku

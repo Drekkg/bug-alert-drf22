@@ -85,7 +85,8 @@ JWT_AUTH_SAMESITE = 'None'
 
 
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'bug_alert_drf.serializers.CurrentUserSerializer'
+    'USER_DETAILS_SERIALIZER':
+        'bug_alert_drf.serializers.CurrentUserSerializer'
 }
 
 
@@ -100,9 +101,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = ['https://bug-alert-drf44-f700216422bd.herokuapp.com', 'http://localhost:3000',
-                         'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com', 'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
-                         'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net', "https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net"]
+CORS_ORIGIN_WHITELIST = [
+    'https://bug-alert-drf44-f700216422bd.herokuapp.com',
+    'http://localhost:3000',
+    'https://bug-alert-frontend-b009aeb2d91a.herokuapp.com',
+    'https://3000-drekkg-bugalertfrontend-k2v5e6i4hww.ws-eu116.gitpod.io',
+    'https://3000-drekkg-bugalertfrontend-8546bsm5hdz.ws.codeinstitute-ide.net',
+    ]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'bug_alert_drf.urls'
@@ -145,16 +150,22 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+            'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
