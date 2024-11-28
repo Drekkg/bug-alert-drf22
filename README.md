@@ -37,6 +37,35 @@ Python 3
 
 ## Testing
 
+**Manual Testing**
+
+- The deployed Bug Alert DRF was extensively tested through the front end.
+  Projects, issues, comments, and resolved status were properly retrieved, updated and deleted.
+  Furthermore accessing the database on Heroku the correct behaviour could be observed.
+  The following screenshots confirm observed behaviour.
+
+  **Adding a project**
+
+  A project named "Test Test Test" is added to the table.
+
+![add project](bug_alert_drf/assets/add_project.png)
+
+An issue named "Test 1" and "Test 2" are added to the issues table.
+
+![add isssue](bug_alert_drf/assets/test_issue.png)
+
+Comments "Test issue 1 comment" and "Test issue 2 comment" are added to the comments table.
+
+![add comments](bug_alert_drf/assets/test_comment.png)
+
+The project "Test Test Test" is deleted and as expected the related comments and issues are also deleted.
+
+![delete project](bug_alert_drf/assets/delet_project.png)
+
+![delete Issue](bug_alert_drf/assets/delete_issue.png)
+
+![delet comment](bug_alert_drf/assets/delete_comment.png)
+
 ## Deployment
 
 ### Local Deployment
