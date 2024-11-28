@@ -18,17 +18,25 @@ class Issue(models.Model):
     Model representing the list of issues to track.
     Attributes:
         issue (str): A brief description of the issue.
-        console_error (str): The console error message associated with the issue.
+        console_error (str): The console error message associated
+        with the issue.
         owner (User): The user who reported the issue.
-        repeatable (bool): Indicates whether the issue is repeatable. Defaults to False.
-        created_on (datetime): The date and time when the issue was created. Automatically set on creation.
-        priority (str): The priority level of the issue. Choices are defined in PRIORITY_CHOICES. Defaults to "low".
-        issue_project_id (Project): The project associated with the issue. Can be null.
-        resolved (bool): Indicates whether the issue has been resolved. Defaults to False.
+        repeatable (bool): Indicates whether the issue is repeatable.
+        Defaults to False.
+        created_on (datetime): The date and time when the issue was created.
+        Automatically set on creation.
+        priority (str): The priority level of the issue.
+        Choices are defined in PRIORITY_CHOICES. Defaults to "low".
+        issue_project_id (Project): The project associated with the issue.
+        Can be null.
+        resolved (bool): Indicates whether the issue has been resolved.
+        Defaults to False.
     Meta:
-        ordering (list): Orders the issues by creation date in descending order.
+        ordering (list): Orders the issues by creation date in
+        descending order.
     Methods:
-        __str__(): Returns a string representation of the issue, showing the owner's username and the word 'issues'.
+        __str__(): Returns a string representation of the issue,
+        showing the owner's username and the word 'issues'.
     """
 
     issue = models.CharField(max_length=200)

@@ -167,6 +167,42 @@ which is then filtered on the front end. This should be filterd on the back end 
 
 ![views](bug_alert_drf/assets/views_project.png)
 
+## Issues
+
+**models.py**
+
+![models issues](bug_alert_drf/assets/issues_models.png)
+
+**serializers.py**
+
+![serializer issue](bug_alert_drf/assets/serializers_issue.png)
+
+**urls.py**
+
+![urls issue](bug_alert_drf/assets/urls_issue.png)
+
+**views**
+
+![issue views](bug_alert_drf/assets/views_issues.png)
+
+## Comments/Issue details
+
+**models.py**
+
+![comments model](bug_alert_drf/assets/comments_model.png)
+
+**serializers.py**
+
+![comments serializer](bug_alert_drf/assets/comment_serializer.png)
+
+**urls.py**
+
+![comments urls](bug_alert_drf/assets/comment_urls.png)
+
+**views.py**
+
+![comments views](bug_alert_drf/assets/comments_views.png)
+
 ## Deployment
 
 ### Deployment to Heroku
