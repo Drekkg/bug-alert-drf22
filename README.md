@@ -316,3 +316,4 @@ JWT_AUTH_SAMESITE = 'None'
 - Google
 - Stack Overflow
 - Django documentation
+- GitHub Copilot was mainly for commits and code explanation.
